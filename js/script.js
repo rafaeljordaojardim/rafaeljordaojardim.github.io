@@ -6,9 +6,13 @@ $('nav a, header a').click(function(e) {
     e.preventDefault();
     const id = $(this).attr('href'); //puxa o atributo
     targetOfSet = $(id).offset().top;
+
+    menuHeight = $('nav').innerHeight();
+    console.log(menuHeight, targetOfSet);
+
     $('html, body').animate({
-        scrollTop: targetOfSet - 120
-    }, 700)
+        scrollTop: targetOfSet - menuHeight
+    }, 800)
 
 });
 

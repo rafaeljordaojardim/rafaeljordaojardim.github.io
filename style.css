@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    min-height: calc(100% - 40px);
+    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'cabecalho' 'aleatorio' 'sobremim' 'experiencia' 'cards' 'rodape';
+    grid-template-rows: 80px 0.6fr 1fr 1fr 1fr 50px;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightgrey;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    border-bottom: solid 5px #4faddb;
+    height: 80px;
+    /* box-sizing: content-box; */
+}
+
+.logo {
+    display: inline-block;
+    height: 80px;
+    padding: 15px;
+}
+
+.logo img {
+    display: inline-block;
+    height: 100%;
+    /* background-color: #345; */
+    padding: 3px;
+}
+
+.menu-toggle {
+    display: flex;
+    color: #eee;
+    background-color: #555;
+    border: solid 1px #777;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 20px;
+    margin: 20px 15px;
+}
+
+.menu {
+    vertical-align: top;
+    flex-grow: 10;
+    height: 80px;
+    padding: 25px;
+    /* background-color: red; */
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho a {
+    text-decoration: none;
+    color: #eee;
+    font-size: 1.3em;
+}
+
+.menu a {
+    padding: 15px;
+}
+
+.menu a:hover,
+a.selected {
+    background-color: #4faddb;
+    color: black;
+}
+
+.autenticacao {
+    height: 80px;
+    padding: 25px;
+}
+
+.botao {
+    border-radius: 30px;
+    padding: 10px 25px;
+    margin: 10px;
+}
+
+.destaque {
+    background: #f50a31;
+    color: #fff;
+}
+
+.destaque:active {
+    box-shadow: 5px 5px 5px #5555;
+    font-weight: bold;
+}
+
+.aleatorio {
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: #222 2px 2px 1px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bloco {
+    min-height: 200px;
+    border: solid 1px blanchedalmond;
+    width: 48%;
+    padding: 10px;
+}
+
+.sobremim {
+    display: flex;
+    flex-direction: column;
+    box-shadow: #222 2px 2px 1px;
+    text-align: justify;
+    margin: 10px 0px;
+}
+
+.sobremim h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.experiencia {
+    margin: 10px 0px;
+    display: flex;
+    box-shadow: #222 2px 2px 1px;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.experiencia h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    box-shadow: #222 2px 2px 1px;
+}
+
+.card {
+    width: 200px;
+    background-color: rgba(0, 0, 255, .1);
+    margin: 10px;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.rodape {
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.rodape h4 {
+    align-self: center;
+}
+
+@media(min-width: 679px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media(max-width:680px) {
+    body {
+        grid-template-areas: 'cabecalho' 'aleatorio' 'sobremim' 'experiencia' 'cards' 'rodape';
+        grid-template-rows: 80px .5fr 0.5fr 0.5fr 1fr 50px;
+    }
+    .menu {
+        display: none;
+    }
+    .aleatorio {
+        flex-flow: column wrap;
+        justify-content: flex-start;
+    }
+    .bloco {
+        width: 99%;
+        margin: 20px 0px;
+    }
+    .cards {
+        justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+    }
+    .card {
+        width: 96%;
+    }
+}
+
+@media(max-width: 910px) {
+    .autenticacao {
+        display: none;
+    }
+}
+
+.padding10 {
+    padding: 10px;
+}
+
+.padding15 {
+    padding: 15px;
+}
+
+.padding20 {
+    padding: 20px;
+}

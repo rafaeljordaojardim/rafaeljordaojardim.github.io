@@ -2,7 +2,7 @@
 //verificar o item que foi clicado e fazer referencia com alvo
 //verificar a distancia entre o alvo e o topo
 //animar o scroll ate o alvo
-$('nav a').click(function(e) {
+$('nav a, header a').click(function(e) {
     e.preventDefault();
     const id = $(this).attr('href'); //puxa o atributo
     targetOfSet = $(id).offset().top;

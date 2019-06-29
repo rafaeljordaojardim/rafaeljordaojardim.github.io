@@ -6,12 +6,10 @@ $('nav a, header a').click(function(e) {
     e.preventDefault();
     const id = $(this).attr('href'); //puxa o atributo
     targetOfSet = $(id).offset().top;
-
-    menuHeight = $('nav').innerHeight();
-    console.log(menuHeight, targetOfSet);
-
+    const slider = document.getElementById('menu-slide');
+    slider.style.right = "-220px";
     $('html, body').animate({
-        scrollTop: targetOfSet - menuHeight
+        scrollTop: targetOfSet - 80
     }, 800)
 
 });
@@ -29,5 +27,11 @@ window.onhashchange = function(e) {
 }
 const menuToggle = document.querySelector('.menu-toggle')
 menuToggle.onclick = function() {
-    alert('Implementar menu phone');
+    const slider = document.getElementById('menu-slide');
+    slider.style.height = window.innerHeight - 60 + 'px';
+    if (slider.style.right == "0px") {
+        slider.style.right = "-220px";
+    } else {
+        slider.style.right = "0px";
+    }
 }
